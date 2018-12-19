@@ -37,6 +37,7 @@ export const get = async (url, params = {}) => {
   const response = await fetch(`${url}${qs(params)}`, {
     ...opts,
     method: "GET",
+    credentials: 'include',
   }).catch(fetchError);
 
   return processResponse(response);
